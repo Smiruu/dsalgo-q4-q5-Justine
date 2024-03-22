@@ -1,5 +1,4 @@
 import React from "react";
-// import { Card } from "react-bootstrap";
 import Rating from "./Rating";
 import { Link } from "react-router-dom";
 
@@ -9,8 +8,6 @@ import {
   CardContent,
   CardMedia,
   Typography,
-  Button,
-  CardActions,
 } from "@mui/material";
 
 function Product({ product }) {
@@ -29,7 +26,7 @@ function Product({ product }) {
           <Typography gutterBottom variant="h5" component="div">
             {product.name}
           </Typography>
-          
+
           <Typography className="my-3">
             <Rating
               value={product.rating}
@@ -40,12 +37,14 @@ function Product({ product }) {
           <Typography variant="h5" color="text.secondary">
             {product.price}
           </Typography>
+          <Typography variant="body2" color="text.secondary" className="my-2">
+            Category: {product.category}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Brand: {product.brand}
+          </Typography>
         </CardContent>
       </CardActionArea>
-      {/* <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions> */}
     </Card>
   );
 }
